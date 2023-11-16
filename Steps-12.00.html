@@ -1,0 +1,58 @@
+
+Creating Measures/DAX Table
+12
+<p><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/12/2.jpg"></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Total Sales = SUM(ecommerce_data[sales_per_order])<o:p></o:p></p><p class="MsoNormal">Sales Per Month = DIVIDE([Total
+Sales],DISTINCTCOUNT('Calendar'[Month]),0)+0<o:p></o:p></p><p class="MsoNormal">Total Sales LM =
+CALCULATE(SUM(ecommerce_data[sales_per_order]),
+DATEADD('Calendar'[Date],-1,MONTH))<o:p></o:p></p><p class="MsoNormal">Sales MoM% = DIVIDE([Total Sales]-[Total Sales LM],[Total
+Sales LM])<o:p></o:p></p><p class="MsoNormal">Total Profit = sum(ecommerce_data[profit_per_order])<o:p></o:p></p><p class="MsoNormal">GPM = DIVIDE([Total Profit],[Total Sales],0)<o:p></o:p></p><p class="MsoNormal">GPM LM = CALCULATE([GPM],DATEADD('Calendar'[Date],-1,MONTH))<o:p></o:p></p><p class="MsoNormal">GPM MOM% = DIVIDE(([GPM]- [GPM LM]),[GPM LM])<o:p></o:p></p><p class="MsoNormal">YoY Sales% =&nbsp;<o:p></o:p></p><p class="MsoNormal">VAR CurrentYearSales =
+SUM('ecommerce_data'[sales_per_order])<o:p></o:p></p><p class="MsoNormal">VAR PreviousYearSales = CALCULATE(<o:p></o:p></p><p class="MsoNormal">&nbsp; &nbsp; SUM('ecommerce_data'[sales_per_order]),&nbsp;<o:p></o:p></p><p class="MsoNormal">&nbsp; &nbsp; DATEADD('Calendar'[Date], -1, YEAR)<o:p></o:p></p><p class="MsoNormal">)<o:p></o:p></p><p class="MsoNormal">RETURN<o:p></o:p></p><p class="MsoNormal">&nbsp; &nbsp; IF(ISBLANK(PreviousYearSales), BLANK(),
+DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales))&nbsp;</p><p class="MsoNormal"><o:p></o:p></p><p class="MsoNormal">Arrow Sales MoM% = SWITCH(TRUE(), [Sales MoM%] &lt;0,
+UNICHAR(9660), UNICHAR(9650))<o:p></o:p></p><p class="MsoNormal">Arrow GPM MoM% = SWITCH(TRUE(), [GPM MOM%] &lt;0,
+UNICHAR(9660), UNICHAR(9650))<o:p></o:p></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal">Arrow YOY Sales% = SWITCH(TRUE(), [YoY%] &lt;0, UNICHAR(9660),
+UNICHAR(9650))</p><p class="MsoNormal"><o:p>.&nbsp;&nbsp;</o:p><span style="font-family: Calibri, sans-serif; font-size: 14.6667px;">Follow the GIF below&nbsp;</span></p><p class="MsoNormal"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/12/2.gif" style="width: 50%;"><o:p><br></o:p></p>
+
+<p><a href="https://learn.microsoft.com/en-us/dax/dax-overview" target="_blank">How to Create DAX formula</a></p><p><br></p>
+
