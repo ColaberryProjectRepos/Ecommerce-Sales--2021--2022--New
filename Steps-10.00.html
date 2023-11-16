@@ -1,0 +1,67 @@
+
+Creating Calendar Table and Refresh Date
+10
+<p><b>Creating Calendar Table</b></p><p><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/10/1.jpg"><br></p><p><br></p><ul><li>Go to&nbsp;Modeling Tab&nbsp;click on&nbsp;new
+table.<o:p></o:p></li><li>Type the following DAX formula on DAX
+formula bar, click on the check mark and save.<o:p></o:p></li></ul><p class="MsoNormal"><br></p><p class="MsoNormal">Calendar = ADDCOLUMNS (<o:p></o:p></p><p class="MsoNormal">CALENDAR (Date(Year(Min('ecommerce_data (3)'[order_date])),<o:p></o:p></p><p class="MsoNormal">Month(Min('ecommerce_data (3)'[order_date])),<o:p></o:p></p><p class="MsoNormal">DAY(Min('ecommerce_data (3)'[order_date]))),<o:p></o:p></p><p class="MsoNormal">Date(Year(Max('ecommerce_data (3)'[order_date])),<o:p></o:p></p><p class="MsoNormal">Month(Max('ecommerce_data (3)'[order_date])),<o:p></o:p></p><p class="MsoNormal">DAY(Max('ecommerce_data (3)'[order_date])))),<o:p></o:p></p><p class="MsoNormal">"Month number", FORMAT ([Date], "MM"),<o:p></o:p></p><p class="MsoNormal">"Month Year", FORMAT ([Date],
+"MMMYYYY"),<o:p></o:p></p><p class="MsoNormal">"Month", FORMAT ([Date], "mmmm"),<o:p></o:p></p><p class="MsoNormal">"Week Number", "Week-"&amp;
+WEEKNUM([Date]),<o:p></o:p></p><p class="MsoNormal">"Week", WEEKNUM ([Date]),<o:p></o:p></p><p class="MsoNormal">"Day Of Month", Month([DATE])
+&amp;"-"&amp; FORMAT ( [Date], "dd" ),<o:p></o:p></p><p class="MsoNormal">"Year Quarter", FORMAT ([Date], "YYYY")
+&amp; "/Q" &amp; FORMAT ([Date], "Q"),<o:p></o:p></p><p class="MsoNormal">"Year", FORMAT ([Date], "YYYY")<o:p></o:p></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal">)</p><p class="MsoNormal"><o:p></o:p></p><p><span style="font-family: Calibri, sans-serif; font-size: 14.6667px;">Follow the GIF below</span></p><p><span style="font-family: Calibri, sans-serif; font-size: 14.6667px;">&nbsp;</span><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/10/2.gif" style="width: 50%;"></p><p><b><br></b></p><p><b>Creating Refresh Date</b></p><p><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/10/3.jpg"></p><ul><li>On the home page under Get Data
+select Blank Query and Rename it to Refresh Date</li><li>On the Formula window enter this
+Formula Datetime.LocalNow()</li><li>A date time will appear</li><li>The on the top left change it to
+a table</li><li> Rename the Column to Last
+Refresh and Save</li></ul><p class="MsoNormal"><span style="font-family: Calibri, sans-serif; font-size: 14.6667px;">Follow the GIF below&nbsp;</span>&nbsp; &nbsp;<br></p><p>
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1421/10/1.gif" style="width: 50%;"><br></p>
+
+<p><a href="https://www.youtube.com/watch?v=OgD0NjKeWDU" target="_blank">Calendar Table</a></p><p><a href="https://www.youtube.com/watch?v=oN6mOmEruOQ" target="_blank">Refresh Date</a></p><p><br></p><p><br></p>
+
